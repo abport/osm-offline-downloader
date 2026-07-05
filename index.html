@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSM Offline GIS</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="sidebar">
+    <h1>OSM Offline GIS</h1>
+    <p class="hint">
+      1. Click <strong>Select area</strong>, then drag a rectangle on the map.<br>
+      2. Choose a map style and edit layer styles if needed.<br>
+      3. Choose what to download, then click <strong>Download</strong>.<br><br>
+      All OSM features in the area are downloaded as <strong>vector data</strong> with
+      <strong>full attribute tables</strong>. The offline map recreates OSM cartography
+      in code &mdash; no map tiles are stored.
+    </p>
+
+    <button id="selectBtn" type="button" data-i18n="select_area">Select area</button>
+    <button id="clearBtn" type="button" data-i18n="clear_selection" disabled>Clear selection</button>
+
+    <div id="estimate">No area selected.</div>
+
+    <fieldset class="download-mode" id="downloadMode">
+      <legend data-i18n="download_include">Download</legend>
+      <label>
+        <input type="radio" name="downloadMode" value="both" checked />
+        <span data-i18n="mode_both">Offline map + GIS files</span>
+      </label>
+      <label>
+        <input type="radio" name="downloadMode" value="offline" />
+        <span data-i18n="mode_offline">Offline map only</span>
+      </label>
+      <label>
+        <input type="radio" name="downloadMode" value="gis" />
+        <span data-i18n="mode_gis">GIS files only (GeoJSON + raw OSM)</span>
+      </label>
+    </fieldset>
+
+    <button id="downloadBtn" type="button" data-i18n="download_btn" disabled>Download</button>
+
+    <div id="progressWrap">
+      <div id="progressBar"><div id="progressFill"></div></div>
+      <div id="progressText"></div>
+    </div>
+
+    <div id="status"></div>
+
+    <p class="footnote">
+      Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+      Data is fetched from the volunteer-run <a href="https://overpass-api.de">Overpass API</a>;
+      large areas are downloaded in tiles and merged.
+    </p>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://unpkg.com/osmtogeojson@3.0.0-beta.5/osmtogeojson.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/cartography-styles.js"></script>
+  <script src="js/osm-carto-style.js"></script>
+  <script src="js/gis-export.js"></script>
+  <script src="js/gis-toolkit.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
