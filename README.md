@@ -119,7 +119,7 @@ All themes are **reimplemented in JavaScript** (`js/cartography-styles.js` + `js
 | **Standard** | Minimal grey/white road network, neutral landuse | [openstreetmap-carto](https://github.com/gravitystorm/openstreetmap-carto) (simplified palette) |
 | **Carto Classic** | Full OSM Carto-style road hierarchy and landcover colors | [openstreetmap-carto](https://github.com/gravitystorm/openstreetmap-carto) |
 | **Wikimedia** | Cream land, soft blues, pastel greens, warm road hierarchy | [Wikimedia Maps](https://maps.wikimedia.org/) basemap tile style |
-| **High Contrast** | Bold black outlines, heavy road casings, strong labels and POI badges | Similar to OpenTopoMap or other topo styles |
+| **High Contrast** | Bold black outlines, heavy road casings, strong labels and POI badges | Similar to OpenTopoMap style |
 | **Warm Carto** | Soft cream background, low-contrast buildings, warm road fills | Warm variant inspired by OSM Carto–like palettes |
 
 The active theme and your per-layer overrides are saved into `data/map-data.js` and applied in the offline `viewer.html`.
