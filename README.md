@@ -1,4 +1,4 @@
-# OSM Offline GIS
+# OSM Offline Downloader
 
 A **static, browser-based tool** for downloading OpenStreetMap vector data for any area of the world, styling it with code-rendered cartography (no raster tiles), and exporting an **offline web map** and/or **GIS-ready files**.
 
